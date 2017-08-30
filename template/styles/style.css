@@ -1,0 +1,301 @@
+body {
+	background: rgb(240,240,240);
+	color: rgb(20,20,20);
+	font-family: Helvetica;
+	margin: 0
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+#banner{    
+	background-image:url(./../images/test2.jpg) ;
+	background-size: cover;
+	padding: 150px 0;
+	text-align: center;
+    color: white;
+}
+
+#banner h1 {
+	color: white;
+}
+
+#banner p {
+	color: white;
+	font-size: 30px;
+	font-weight: lighter;
+	opacity: 0.7;
+}
+
+#tab {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0; 
+    color: #5f8e62;
+}
+
+#tab li a .active  {
+    background: #4d5e01;
+    color: #ffffff
+}
+
+.center-align {
+    text-align: center;
+}
+
+/* #tab li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: #c1bdba;
+    color: #000;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+} */
+.form-style {
+    background: #f5f5f5;
+    padding: 30px;
+    max-width: 100%;
+    width: 34em;
+    margin: 30px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: orchid;
+    font-weight: 300;
+    margin: 0 0 40px;
+    letter-spacing: 2px;
+}
+
+.signup div.row {
+  vertical-align: top;
+  height: 8px;
+
+}
+
+/* .signup .form-field {
+    margin-left: 0px;
+    width: 100%;
+    display: inline-block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+} */
+
+.btn {
+    width: 100%;
+    height: 2.5em;
+    background: #333c10;
+}
+
+.btn:hover {
+  background-color: #10333c;
+}
+
+/* profile page */
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.u-clearfix:before,
+.u-clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.u-clearfix:after {
+  clear: both;
+}
+
+.card-container {
+    margin: 25px auto 0;
+    position: relative;
+    width: 692px;
+}
+
+.u-clearfix {
+    *zoom: 1;
+}
+  
+.subtle {
+color: #aaa;
+
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+    z-index: 1;
+}
+
+
+.card-number {
+    margin-top: 5px;
+}
+  
+.card-circle {
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 22px;
+    font-size: 12px;
+    height: 25px;
+    text-align: center;
+    width: 25px;
+}
+
+.card-author {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .5px;
+    margin: 15px 0 0;
+    text-transform: uppercase;
+  }
+
+
+  
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 60px;
+    margin: 10px 0;
+}
+
+
+.card-description {
+    display: inline-block;
+    font-weight: 300;
+    line-height: 22px;
+    margin: 10px 0;
+  }
+  
+  .card-read {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin: 5px 0 20px;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  
+  /* .card-read:after {
+    background-color: #b8bddd;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    width: 75%;
+  } */
+  .card-shadow {
+    background-color: #fff;
+    box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1), 0 0 100px 3px rgba(0, 0, 0, .25);
+    height: 1px;
+    margin: -1px auto 0;
+    width: 80%;
+    z-index: -1;
+  }
+  
+
+
+
+/* height:100%;
+width: 100%;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+background-position:  center center;
+background-repeat: repeat, no-repeat;
+z-index: -1; */
+
+.nav-wrapper {
+  /* background-color: #3c1033; */
+  background-color: #765770;
+}
+
+.page-footer {
+  background-color: #9d8799!important;
+}
+
+.tabs li:active {
+  background-color: #3c1033;
+}
+
+.tabs .tab a.active {
+  color: #641b55;
+}
+
+.wrapper {
+  margin: 0 250px 0 250px;
+}
+
+#search {
+  padding:8px 45px;
+  background: #eee;
+  border:0px solid #dbdbdb;
+}
+
+.searchButton {
+  margin: 0px auto auto -10px;
+  font-size: 36px;
+}
+
+.close-search {
+  margin: 15px -25px
+}
+
+.card-action {
+  font-size: 14px;
+}
+
+.btn-floating .material-icons{
+  font-size: 1.2rem;
+}
+
+.recipes-add-btn {
+  float: right;
+  margin: 10px 10px 0 0;
+}
+
+.danger-btn {
+  background-color: red;
+}
+
+.default-btn {
+  background-color: white;
+}
+
+#myrecipes img, #favorites img {
+  border-radius: 50%;
+}
+
+.adjust {
+   margin-left: 40px; 
+}
+
+.signup-head, .signin-head {
+  margin-top: -25px;
+  margin-bottom: -15px;
+}

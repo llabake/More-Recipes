@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>More Recipes: Share​ ​awesome​ ​and​ ​exciting​ ​​ ​recipe​ ​ideas </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">  
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+    <header> 
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo left adjust">More Recipes</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="signin.html">Sign In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div> 
+    </header>
+
+    <div class="row form-style">
+        <div class="col s12 ">
+          <ul class="tabs .tabs-fixed-width" id='tab'>
+            <li class="tab col s6"><a href="#signup" class="active">Sign Up</a></li>
+            <li class="tab col s6"><a  href="#signin">Sign In</a></li>
+          </ul>
+        </div>
+
+        <div id="signup" class="col s12"> 
+            <div class="row signup-head">  
+                <div class="col s12"> 
+                    <h5 class="center-align"> Sign Up for More Recipes <h5> 
+                </div>
+            </div> 
+ 
+                <div class="row">
+                    <div class="col s12 ">
+                        <div class="row ">
+                                <form class="col s12 signup" >
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input placeholder="Enter your first name" required id="first_name" type="text" class="validate " >
+                                            <label for="first_name">First Name:</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="last_name" placeholder="Enter your last name" type="text" class="validate">
+                                            <label for="last_name">Last Name:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="username" type="text" placeholder="Enter a username" class="validate">
+                                            <label for="username">Username:</label>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="password" type="password" placeholder="Enter your password" class="validate">
+                                            <label for="password">Password:</label>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="confirm-password" type="password" placeholder="Enter your password again" class="validate">
+                                            <label for="confirm-password">Confirm Password:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="email" type="email" class="validate" placeholder="Enter your email">
+                                            <label for="email">Email:</label>
+                                        </div>
+                                    </div>
+                
+                                            <a class="waves-effect waves-light btn">Start sharing</a>
+                    
+                                </form>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="signin">
+        <div  class="col s12 signin-head">  
+                <div class="row container">  
+                        <div class="col s12 "> 
+                            <h5 class="center-align"> More Recipes Waiting <h5> 
+                        </div>
+                </div>   
+            <div class="row form">
+                <form class="col s12" action="" method="post">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="username" type="text" placeholder="Enter your username" class="validate">
+                            <label for="username">Username:</label>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" placeholder="Enter your password" class="validate">
+                            <label for="password">Password:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>
+                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                            <label for="filled-in-box">Remember me</label>
+                        </p>
+                        <span class="psw">Forgot  <a href="signin.html">password?</a></span>
+                    </div><br>
+        
+                    <a class="waves-effect waves-light btn ">Sign In</a>
+        
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+            
+
+
+ 
+    
+
+<footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Stay Connected</h5>
+                    <p class="grey-text text-lighten-4">Join our over 5 million users today.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <!--
+                  <h5 class="white-text">Sign Up</h5>
+                   <h5 class="white-text">Sign In</h5>
+-->
+                    <ul style="display: inline-flex;">
+                        
+                        <li>
+                            <a href="http://facebook.com/morecipesapp"> <i class="fa fa-facebook"></i></a>
+                        </li>
+                        &emsp;&emsp;
+                        <li>
+                          <a href="http://twitter.com/morecipesapp"> <i class="fa fa-twitter"></i></a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Happy Girl World
+                <!--            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+            </div>
+        </div>
+    </footer>
+
+    
+  
+
+</body>
+
+</html>
