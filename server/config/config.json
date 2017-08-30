@@ -1,0 +1,22 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "girl",
+    "database": "More-Recipes",
+    "host": "127.0.0.1",
+    "port": "5433",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "girl",
+    "database": "More-Recipes",
+    "host": "127.0.0.1",
+    "port": "5433",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+
+  }
+}
