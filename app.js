@@ -10,7 +10,7 @@ app.use(logger('dev'));
 
 const port = process.env.PORT || 3000;
 
-// Parse incoming requests data (https://github.com/expressjs/body-parser)
+// Parse incoming requests data 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
