@@ -7,7 +7,7 @@ import db from './server/models';
 
 // Set up the express app
 const app = express();
-import consign from "consign";
+import consign from 'consign';
 
 // Log requests to the console.
 app.use(logger('dev'));
@@ -19,18 +19,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Call all routes with app instance
-routes(app)
+routes(app);
 
-consign({verbose: false})
- .then("server/models/index.js")
- .into(app);
+consign({ verbose: false })
+  .then('server/models/index.js')
+  .into(app);
 
-if (process.env.NODE_ENV !== "test") {
-    db.sequelize.sync().then(()=>{
-        app.listen(port,() => {
-        console.log(`Server running on port ${port}`)
-        });
-    })
-};
+if (process.env.NODE_ENV !== 'test') {
+  db.sequelize.sync().then(() => {
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  });
+}
 
 module.exports = app;

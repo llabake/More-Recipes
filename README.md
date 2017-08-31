@@ -21,7 +21,7 @@ Set up Express
 Set up Database and make migrations by running the following commands.<br> 
 - `sequelize db model:create. 
 - `create necessary tables in the database. 
-- ` equelize db migrate to apply changes in the table.
+- `sequelize db migrate to apply changes in the table.
 
 #Functionality and Endpoints
 
@@ -32,11 +32,11 @@ Set up Database and make migrations by running the following commands.<br>
 </tr>
 <tr>
 <td>Logs a user in</td>
-<td>POST /api/user</td>
+<td>POST /api/users/sigin</td>
 </tr>
 <tr>
 <td>Register a new user</td>
-<td>POST /api/user/signup</td>
+<td>POST /api/users/signup</td>
 </tr>
 <tr>
 <td>Create a new group</td>
