@@ -10,10 +10,17 @@
   "test": {
     "username": "postgres",
     "password": "girl",
-    "database": "More-Recipes",
+    "database": "More-Recipes-test",
     "host": "127.0.0.1",
     "port": "5433",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "params": {
+      "logging": false,
+      "define": {
+        "underscored": true
+      }
+    },
+    "jwtSecret": "more_recipes_test"
   },
   "production": {
     "use_env_variable": "DATABASE_URL"
