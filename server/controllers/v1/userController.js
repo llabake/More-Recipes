@@ -8,36 +8,21 @@ const salt = bcrypt.genSaltSync(saltRounds);
 const secret = 'drtguug8*werty+uifghyu';
 
 export const signUp = (req, res) => {
-  if (!req.body.username) {
-    res.status(400).json({ message: 'username is required' });
-  } else if (!req.body.firstName) {
-    res.status(400).json({ message: 'firstName is required' });
-  } else if (!req.body.lastName) {
-    res.status(400).json({ message: 'lastName is required' });
-  } else if (!req.body.email) {
-    res.status(400).json({ message: 'email is required' });
-  } else if (!req.body.password) {
-    res.status(400).json({ message: 'password is required' });
-  } else if (!req.body.confirmpassword) {
-    res.status(400).json({ message: 'confirmpassword is required' });
-  } else if (req.body.password !== req.body.confirmpassword) {
-    res.status(400).json({ message: 'Please ensure the Password match' });
-  } else {
-    User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, salt),
-      firstName: req.body.firstName,
-      lastName: req.body.lastName
-    })
-      .then(user => res.status(201).json({ message: 'Your account has been created' }))
-      .catch((error) => {
-        if (error.name === 'SequelizeUniqueConstraintError') {
-          res.status(400).json({ message: 'User already exists' });
-        }
-        res.status(400).send(error);
-      });
-  }
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password, salt),
+    firstName: req.body.firstName,
+    lastName: req.body.lastName
+  })
+    .then(() => res.status(201).json({ message:
+        'Your account has been created' }))
+    .catch((error) => {
+      if (error.name === 'SequelizeUniqueConstraintError') {
+        return res.status(400).json({ message: 'User already exists' });
+      }
+      return res.status(400).send(error);
+    });
 };
 
 export const signIn = (req, res) => {
