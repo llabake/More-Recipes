@@ -1,4 +1,6 @@
 import * as userController from '../controllers/v1/userController';
+import { signUpValidator, signInValidator } from '../helpers/validator'
+
 
 module.exports = (app) => {
   app.get('/api/users', (req, res) => res.status(200).send({
@@ -9,7 +11,7 @@ module.exports = (app) => {
     }
     }));
 
-  app.post('/api/v1/users/signup', userController.signUp);
-  app.post('/api/v1/users/signin', userController.signIn);
+  app.post('/api/v1/users/signup', signUpValidator, userController.signUp);
+  app.post('/api/v1/users/signin', signInValidator, userController.signIn);
 
 }
