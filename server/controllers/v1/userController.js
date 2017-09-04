@@ -16,7 +16,7 @@ export const signUp = (req, res) => {
     lastName: req.body.lastName
   })
     .then(() => res.status(201).json({ message:
-        'Your account has been created' }))
+      'Your account has been created' }))
     .catch((error) => {
       if (error.name === 'SequelizeUniqueConstraintError') {
         return res.status(400).json({ message: 'User already exists' });
@@ -41,7 +41,7 @@ export const signIn = (req, res) => {
         });
       } else if (user) {
         if (bcrypt.compareSync(req.body.password, user.password)) {
-          const token = jwt.sign({ data: user }, secret, { expiresIn: 8640 });
+          const token = jwt.sign({ data: user }, secret, { expiresIn: 86400 });
           res.status(200).json({
             message: 'user logged in',
             token
