@@ -27,3 +27,18 @@ export const modifyRecipe = (req, res) => {
     });
   });
 };
+
+export const deleteRecipe = (req, res) => {
+  Recipe.destroy({
+    where: {
+      id: req.params.recipeId
+    },
+  })
+    .then((recipe, err) => {
+      if (err) {
+        res.status(400).json({ message: 'error sending your request' });
+      } else {
+        res.status(204).json({ message: 'recipe deleted successfully' });
+      }
+    });
+};
