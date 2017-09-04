@@ -7,6 +7,8 @@ const recipeRoute = (app) => {
   app.post('/api/v1/recipes', authMiddleware, recipeController.addRecipe);
   app.put('/api/v1/recipes/:recipeId(\\d+)/', authMiddleware, isRecipeOwner,
     recipeController.modifyRecipe);
+  app.delete('/api/v1/recipes/:recipeId(\\d+)/', authMiddleware, isRecipeOwner,
+    recipeController.deleteRecipe);
 };
 
 export default recipeRoute;
