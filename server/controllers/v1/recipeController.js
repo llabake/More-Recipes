@@ -42,3 +42,14 @@ export const deleteRecipe = (req, res) => {
       }
     });
 };
+
+export const getAllRecipes = (req, res) => {
+  Recipe.findAll({})
+    .then((recipes, err) => {
+      if (err) {
+        res.status(400).json({ message: 'error sending your request', err });
+      } else {
+        res.status(200).json({ recipes });
+      }
+    });
+};
