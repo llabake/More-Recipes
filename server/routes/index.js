@@ -1,7 +1,11 @@
 import IndexRoute from './indexRoute';
 import UserRoute from './userRoute';
+import RecipeRoute from './recipeRoute';
 
-module.exports = (app) => {
-    IndexRoute(app),
-    UserRoute  (app)
-}
+const routes = (app) => {
+  IndexRoute(app);
+  UserRoute(app);
+  RecipeRoute(app);
+};
+
+export default routes;
