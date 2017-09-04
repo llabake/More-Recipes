@@ -6,7 +6,7 @@
   "scripts": {
     "test": "set NODE_ENV=test&mocha  server/tests/**/*.js --opts ./mocha.opts",
     "start": "./node_modules/.bin/babel-node app.js",
-    "start-dev": "babel-node app.js"
+    "start-dev": "babel-watch app.js"
   },
   "repository": {
     "type": "git",
