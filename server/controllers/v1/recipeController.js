@@ -1,4 +1,4 @@
-import { Recipe } from './../../models';
+import { Recipe, Vote } from './../../models';
 
 export const addRecipe = (req, res) => Recipe.create({
   title: req.body.title,
@@ -52,4 +52,36 @@ export const getAllRecipes = (req, res) => {
         res.status(200).json({ recipes });
       }
     });
+};
+
+export const voteRecipe = (req, res) => {
+  Vote.findOne({
+    where: {
+      userId: req.user.id,
+      recipeId: req.params.recipeId
+    }
+  }).then((vote, err) => {
+    if (err) {
+      res.status(400).json({ message: 'error sending your request', err });
+    } else if (vote) {
+      vote.update({ type: req.body.type })
+        .then((updatedVote) => {
+          res.status(201).json({ vote: updatedVote,
+            message: 'vote created successfully'
+          });
+        }).catch(err => res.status(400).json({
+          message: 'error sending your request', err }));
+    } else {
+      Vote.create({
+        type: req.body.type,
+        userId: req.user.id,
+        recipeId: req.params.recipeId
+      }).then((newVote) => {
+        res.status(201).json({ vote: newVote,
+          message: 'vote created successfully'
+        });
+      }).catch(err => res.status(400).json({
+        message: 'error sending your request', err }));
+    }
+  });
 };
