@@ -1,4 +1,4 @@
-import { Recipe, Vote } from './../../models';
+import { Recipe, Vote, FavoriteRecipe } from './../../models';
 
 export const addRecipe = (req, res) => Recipe.create({
   title: req.body.title,
@@ -84,4 +84,35 @@ export const voteRecipe = (req, res) => {
         message: 'error sending your request', err }));
     }
   });
+};
+
+export const addRecipeAsFavorite = (req, res) => {
+  FavoriteRecipe.create({
+    userId: req.user.id,
+    recipeId: req.params.recipeId
+  })
+    .then(favoriteRecipe => res.status(201).json({ favoriteRecipe,
+      message: 'Recipe has been favorited' }))
+    .catch((error) => {
+      if (error.name === 'SequelizeUniqueConstraintError') {
+        res.status(400).json({ message: 'Recipe has already been favorited' });
+      } else {
+        res.status(400).json({ error });
+      }
+    });
+};
+
+export const getFavoriteRecipes = (req, res) => {
+  FavoriteRecipe.findAll({
+    where: {
+      userId: req.user.id
+    },
+  })
+    .then((favoriteRecipes, err) => {
+      if (err) {
+        res.status(400).json({ message: 'error sending your request', err });
+      } else {
+        return res.status(200).json({ favoriteRecipes });
+      }
+    });
 };

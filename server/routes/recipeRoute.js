@@ -13,6 +13,10 @@ const recipeRoute = (app) => {
     recipeController.getAllRecipes);
   app.post('/api/v1/recipes/:recipeId(\\d+)/votes/', authMiddleware, recipeExist,
     recipeController.voteRecipe);
+  app.post('/api/v1/users/:userId(\\d+)/recipes/:recipeId(\\d+)/', authMiddleware, recipeExist,
+    recipeController.addRecipeAsFavorite);
+  app.get('/api/v1/users/:userId(\\d+)/recipes/', authMiddleware,
+    recipeController.getFavoriteRecipes);
 };
 
 export default recipeRoute;
