@@ -1,4 +1,4 @@
-import { Recipe, Vote, FavoriteRecipe } from './../../models';
+import { Recipe, Vote, FavoriteRecipe, Review } from './../../models';
 
 export const addRecipe = (req, res) => Recipe.create({
   title: req.body.title,
@@ -116,3 +116,19 @@ export const getFavoriteRecipes = (req, res) => {
       }
     });
 };
+
+export const postReview = (req, res) => {
+  Review.create({
+    reviewText: req.body.reviewText,
+    userId: req.user.id,
+    recipeId: req.params.recipeId
+  })
+    .then((review, err) => {
+      if (err) {
+        res.status(400).json({ message: 'error sending your request', err });
+      } else {
+        return res.status(200).json({ review });
+      }
+    });
+};
+
