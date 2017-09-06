@@ -1,10 +1,12 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 import logger from 'morgan';
 import routes from './server/routes';
 import db from './server/models';
 
 
+dotenv.config();
 // Set up the express app
 const app = express();
 import consign from 'consign';
