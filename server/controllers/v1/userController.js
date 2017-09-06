@@ -5,7 +5,7 @@ import { User } from './../../models';
 
 const saltRounds = 10;
 const salt = bcrypt.genSaltSync(saltRounds);
-const secret = 'drtguug8*werty+uifghyu';
+const secret = process.env.JWT_SECRET;
 
 export const signUp = (req, res) => {
   User.create({

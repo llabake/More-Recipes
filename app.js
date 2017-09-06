@@ -1,9 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 import logger from 'morgan';
 import routes from './server/routes';
 import db from './server/models';
 
+const env = process.env.NODE_ENV || 'development';
+if (env === 'development') {
+  dotenv.config();
+}
 
 // Set up the express app
 const app = express();
@@ -32,5 +37,6 @@ if (process.env.NODE_ENV !== 'test') {
     });
   });
 }
+
 
 module.exports = app;
