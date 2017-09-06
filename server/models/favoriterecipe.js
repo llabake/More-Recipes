@@ -10,8 +10,14 @@ const favoriteRecipeModel = (sequelize, DataTypes) => {
     }
   }, {
     classMethods: {
-      associate() {
+      associate(models) {
         // associations can be defined here
+        FavoriteRecipe.belongsTo(models.Recipe, {
+          foreignKey: 'recipeId'
+        });
+        FavoriteRecipe.belongsTo(models.User, {
+          foreignKey: 'userId'
+        });
       }
     }
   });
