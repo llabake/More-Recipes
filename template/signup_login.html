@@ -23,7 +23,6 @@
                 <div class="nav-wrapper">
                     <a href="index.html" class="brand-logo left adjust">More Recipes</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="signin.html">Sign In</a></li>
                     </ul>
                 </div>
             </nav>
@@ -86,7 +85,7 @@
                                         </div>
                                     </div>
                 
-                                            <a class="waves-effect waves-light btn">Start sharing</a>
+                                            <a class="waves-effect waves-light btn" href="#signin_section">Start sharing</a>
                     
                                 </form>
                         </div>
@@ -94,42 +93,45 @@
             </div>
 
         </div>
-        <div id="signin">
-        <div  class="col s12 signin-head">  
-                <div class="row container">  
-                        <div class="col s12 "> 
-                            <h5 class="center-align"> More Recipes Waiting <h5> 
-                        </div>
-                </div>   
-            <div class="row form">
-                <form class="col s12" action="" method="post">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="username" type="text" placeholder="Enter your username" class="validate">
-                            <label for="username">Username:</label>
-                        </div>
+        <section id="signin-section">
+            <div id="signin">
+                <div  class="col s12 signin-head">  
+                        <div class="row container">  
+                                <div class="col s12 "> 
+                                    <h5 class="center-align"> More Recipes Waiting <h5> 
+                                </div>
+                        </div>   
+                    <div class="row form">
+                        <form class="col s12" action="" method="post">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="username" type="text" placeholder="Enter your username" class="validate">
+                                    <label for="username">Username:</label>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" placeholder="Enter your password" class="validate">
+                                    <label for="password">Password:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                    <label for="filled-in-box">Remember me</label>
+                                </p>
+                                <span class="psw">Forgot  <a href="signin.html">password?</a></span>
+                            </div><br>
+                
+                            <a class="waves-effect waves-light btn " href="allrecipes.html">Sign In</a>
+                
+                        </form>
                     </div>
-        
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" placeholder="Enter your password" class="validate">
-                            <label for="password">Password:</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p>
-                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                            <label for="filled-in-box">Remember me</label>
-                        </p>
-                        <span class="psw">Forgot  <a href="signin.html">password?</a></span>
-                    </div><br>
-        
-                    <a class="waves-effect waves-light btn ">Sign In</a>
-        
-                </form>
+                </div>
             </div>
-        </div>
-        </div>
+        </section>
+
     </div>
             
 
