@@ -38,7 +38,7 @@ export const deleteRecipe = (req, res) => {
       if (err) {
         res.status(400).json({ message: 'error sending your request' });
       } else {
-        res.status(204).json({ message: 'recipe deleted successfully' });
+        res.status(200).json({ message: 'recipe deleted successfully' });
       }
     });
 };
