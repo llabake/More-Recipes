@@ -222,24 +222,6 @@ describe('User route:', () => {
           done(err);
         });
     });
-    // it('it should return user already exists', (done) => {
-    //   request.post('/api/v1/users/signup')
-    //     .send({ username: 'damola',
-    //       email: 'dd@gmail.com',
-    //       password: 'smoky',
-    //       confirmpassword: 'smoky',
-    //       firstName: 'adedamola',
-    //       lastName: 'wuraola' })
-    //     .end((err, res) => {
-    //       expect(400);
-    //       expect(res.body).to.eql({ message:
-    //         'User already exists' });
-    //       done(err);
-    //     });
-    // });
   });
 });
 
-// {
-
-// }
