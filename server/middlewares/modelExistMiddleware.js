@@ -1,6 +1,6 @@
 import { Recipe } from './../models';
 
-export const recipeExist = (req, res, next) => {
+const recipeExist = (req, res, next) => {
   Recipe.findOne({
     where: {
       id: req.params.recipeId
@@ -15,3 +15,5 @@ export const recipeExist = (req, res, next) => {
     }
   });
 };
+
+export default recipeExist;
