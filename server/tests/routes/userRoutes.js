@@ -89,7 +89,8 @@ describe('User route:', () => {
           lastName: 'wuraola' })
         .end((err, res) => {
           expect(400);
-          expect(res.body.errors[0]).to.eql({ path: 'username', message: 'username is required' });
+          expect(res.body.errors[0]).to.eql({
+            path: 'username', message: 'username is required' });
           expect(res.body.errors).to.have.lengthOf(1);
           done(err);
         });
@@ -205,7 +206,8 @@ describe('User route:', () => {
         })
         .end((err, res) => {
           expect(400);
-          expect(res.body.errors[0]).to.eql({ path: 'username', message: 'username is required' });
+          expect(res.body.errors[0]).to.eql({
+            path: 'username', message: 'username is required' });
           expect(res.body.errors).to.have.lengthOf(1);
           done(err);
         });
@@ -217,7 +219,9 @@ describe('User route:', () => {
         })
         .end((err, res) => {
           expect(400);
-          expect(res.body.errors[0]).to.eql({ path: 'password', message: 'password is required' });
+          expect(res.body.errors[0]).to.eql({
+            path: 'password', message: 'password is required'
+          });
           expect(res.body.errors).to.have.lengthOf(1);
           done(err);
         });
