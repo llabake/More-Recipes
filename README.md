@@ -5,6 +5,7 @@
 
 Bootcamp/LOS 26 PROJECT
 
+[![Build Status](https://travis-ci.org/llabake/more-recipes.svg?branch=ch-user-route-test-ch-test-150881181)](https://travis-ci.org/llabake/more-recipes)
 
 #Description
 

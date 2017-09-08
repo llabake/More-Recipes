@@ -1,9 +1,17 @@
-before_script : 
-  -npm install
-script: mocha test
 language: node_js
-env:
-  - PORT = 3000
+
 node_js:
-  - "5.1"
-  - "4"
+  - "6"
+services:
+  - postgresql
+
+before_install:
+- npm install -g sequelize-cli
+- npm install -g mocha
+
+before_script: 
+  - npm install
+  - psql -c 'create database "More-Recipes-test";' -U postgres
+
+script: 
+  - npm run test
