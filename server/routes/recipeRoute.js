@@ -9,6 +9,8 @@ const recipeRoute = (app) => {
     recipeController.modifyRecipe);
   app.delete('/api/v1/recipes/:recipeId(\\d+)/', authMiddleware, isRecipeOwner,
     recipeController.deleteRecipe);
+  app.get('/api/v1/recipes/:recipeId(\\d+)/', authMiddleware,
+    recipeController.findARecipe);
   app.get('/api/v1/recipes/', authMiddleware,
     recipeController.getAllRecipes);
   app.post('/api/v1/recipes/:recipeId(\\d+)/votes/',
