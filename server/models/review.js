@@ -12,7 +12,7 @@ const reviewModel = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       validate: {
         len: {
-          args: [1 1000],
+          args: [1, 1000],
           msg: 'Minimum of 1 character and Maximum of 1000 characters required'
         }
       }
