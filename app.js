@@ -4,11 +4,8 @@ import dotenv from 'dotenv';
 import logger from 'morgan';
 import routes from './server/routes';
 import db from './server/models';
-
-const env = process.env.NODE_ENV || 'development';
-if (env === 'development') {
-  dotenv.config();
-}
+ 
+dotenv.config();  
 
 // Set up the express app
 const app = express();
@@ -38,5 +35,9 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
+// Setup a default catch-all route that sends back a welcome message in JSON format.
+app.get('*', (req, res) => res.status(200).send({
+  message: 'Welcome to the hepd of recipes.',
+}));
 
-module.exports = app;
+export default app;

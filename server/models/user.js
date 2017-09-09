@@ -1,6 +1,6 @@
 
 
-module.exports = (sequelize, DataTypes) => {
+const userModel = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: {
       type: DataTypes.STRING,
@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         len: {
-          args: [1, 25],
-          msg: 'Minimum of 1 character and Maximum of 25 characters required'
+          args: [[3, 25]],
+          msg: 'Minimum of 3 character and Maximum of 25 characters required'
         }
       }
     },
@@ -29,8 +29,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         len: {
-          args: [1],
-          msg: 'Minimum of 1 character and Maximum of 25 characters required'
+          args: [[3, 25]],
+          msg: 'Minimum of 3 character and Maximum of 25 characters required'
         }
       }
     },
@@ -38,9 +38,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        min: {
-          args: [1],
-          msg: 'Minimum of 1 character and Maximum of 25 characters required'
+        len: {
+          args: [[3, 25]],
+          msg: 'Minimum of 3 character and Maximum of 25 characters required'
         }
       }
     },
@@ -48,9 +48,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        min: {
-          args: [1],
-          msg: 'Minimum of 1 character and Maximum of 25 characters required'
+        len: {
+          args: [[3, 25]],
+          msg: 'Minimum of 3 character and Maximum of 25 characters required'
         }
       }
     },
@@ -66,3 +66,5 @@ module.exports = (sequelize, DataTypes) => {
   });
   return User;
 };
+
+export default userModel;

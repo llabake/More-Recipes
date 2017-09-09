@@ -6,10 +6,10 @@ services:
   - postgresql
 
 before_install:
-- npm install -g sequelize-cli
+- npm install -g sequelize-cli@2.8.0
 - npm install -g mocha
 
-before_script: 
+before_script:
   - npm install
   - psql -c 'create database "More-Recipes-test";' -U postgres
 
