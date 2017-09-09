@@ -159,7 +159,7 @@ describe('User route:', () => {
         .end((err, res) => {
           expect(200);
           expect(res.body.message).to.eql(
-            'user logged in',
+            'user logged in'
           );
           done(err);
         });
@@ -182,7 +182,7 @@ describe('User route:', () => {
         .end((err, res) => {
           expect(200);
           expect(res.body.message).to.eql(
-            'Incorrect credentials, please check username or password',
+            'Incorrect credentials, please check username or password'
           );
           done(err);
         });
@@ -194,7 +194,7 @@ describe('User route:', () => {
         .end((err, res) => {
           expect(400);
           expect(res.body.message).to.eql(
-            'Authentication failed. Incorrect credentials.',
+            'Authentication failed. Incorrect credentials.'
           );
           done(err);
         });
