@@ -51,7 +51,11 @@ export const deleteRecipe = (req, res) => {
 };
 
 export const getAllRecipes = (req, res) => {
-  Recipe.findAll({})
+  const options = {};
+  if (req.query.sort === 'upvotes' && req.query.order === 'ascending') {
+    options.order = [['upvotes', 'ASC']]
+  }
+  Recipe.findAll(options)
     .then((recipes, err) => {
       if (err) {
         res.status(400).json({ message: 'error sending your request', err });
