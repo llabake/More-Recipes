@@ -1,7 +1,7 @@
 import * as recipeController from '../controllers/v1/recipeController';
 import authMiddleware from '../middlewares/authMiddleware';
-import { isRecipeOwner } from '../middlewares/permissionMiddleware';
-import  recipeExist  from '../middlewares/modelExistMiddleware';
+import isRecipeOwner from '../middlewares/permissionMiddleware';
+import recipeExist from '../middlewares/modelExistMiddleware';
 
 const recipeRoute = (app) => {
   app.post('/api/v1/recipes', authMiddleware, recipeController.addRecipe);
