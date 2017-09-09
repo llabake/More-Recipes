@@ -1,7 +1,7 @@
 import * as recipeController from '../controllers/v1/recipeController';
 import authMiddleware from '../middlewares/authMiddleware';
 import isRecipeOwner from '../middlewares/permissionMiddleware';
-import recipeExist from '../middlewares/modelExistMiddleware';
+import recipeExist from '../middlewares/recipeExistMiddleware';
 
 const recipeRoute = (app) => {
   app.post('/api/v1/recipes', authMiddleware, recipeController.addRecipe);
@@ -19,6 +19,8 @@ const recipeRoute = (app) => {
     recipeController.getFavoriteRecipes);
   app.post('/api/v1/recipes/:recipeId(\\d+)/reviews/', authMiddleware,
     recipeExist, recipeController.postReview);
+  app.get('/api/recipes?sort=upvotes&order=ascending', authMiddleware,
+    recipeController.voteRecipe);
 };
 
 export default recipeRoute;
