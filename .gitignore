@@ -59,3 +59,7 @@ typings/
 .env
 .env.sample
 
+# coverage files 
+.coveralls.yml
+coverage/
+.nyc_output/

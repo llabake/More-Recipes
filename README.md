@@ -5,7 +5,7 @@
 
 Bootcamp/LOS 26 PROJECT
 
-[![Build Status](https://travis-ci.org/llabake/more-recipes.svg?branch=ch-user-route-test-ch-test-150881181)](https://travis-ci.org/llabake/more-recipes)
+[![Build Status](https://travis-ci.org/llabake/more-recipes.svg?branch=develop)](https://travis-ci.org/llabake/more-recipes) [![Coverage Status](https://coveralls.io/repos/github/llabake/more-recipes/badge.svg?branch=develop)](https://coveralls.io/github/llabake/more-recipes?branch=develop)
 
 # Description
 
