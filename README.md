@@ -33,39 +33,39 @@ Set up Database and make migrations by running the following commands.<br>
 </tr>
 <tr>
 <td>Logs a user in</td>
-<td>POST /api/users/sigin</td>
+<td>POST /api/v1/users/sigin</td>
 </tr>
 <tr>
 <td>Register a new user</td>
-<td>POST /api/users/signup</td>
+<td>POST /api/v1/users/signup</td>
 </tr>
 <tr>
-<td>Create a new group</td>
-<td>POST /api/group/</td>
+<td>Create a new recipe</td>
+<td>POST /api/v1/recipe/</td>
 </tr>
 <tr>
-<td>Add members to a group</td>
-<td>POST api/group/groupid/user</td>
+<td>Add members to a recipe</td>
+<td>POST api/v1/recipe/recipeid/user</td>
 </tr>
 <tr>
-<td>Get single user from a group </td>
-<td>GET /api/groupid/user</td>
+<td>Get single user from a recipe </td>
+<td>GET /api/v1/recipeid/user</td>
 </tr>
 <tr>
-<td>Delete a member from a group </td>
-<td>DELETE /api/groupid/user </td>
+<td>Delete a member from a recipe </td>
+<td>DELETE /api/v1/recipeid/user </td>
 </tr>
 <tr>
-<td>Send group members a message </td>
-<td>POST api/group/groupid/message </td>
+<td>Send recipe members a message </td>
+<td>POST api/v1/recipe/recipeid/message </td>
 </tr>
 <tr>
-<td>List all group messages for user </td>
-<td>GET api/group/groupid/message </td>
+<td>List all recipe messages for user </td>
+<td>GET api/v1/recipe/recipeid/message </td>
 </tr>
 <tr>
-<td>Delete message from a group </td>
-<td>DELETE api/group/groupid/message </td>
+<td>Delete message from a recipe </td>
+<td>DELETE api/v1/recipe/recipeid/message </td>
 </tr>
 
  
