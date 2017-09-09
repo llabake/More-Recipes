@@ -1,5 +1,12 @@
 import { Recipe, Vote, FavoriteRecipe, Review } from './../../models';
 
+export const fetchRecipe = (recipeId) => {
+  return Recipe.findOne({
+    where: {
+      id: recipeId
+    }
+  }) 
+}
 export const addRecipe = (req, res) => Recipe.create({
   title: req.body.title,
   image: req.body.image,
@@ -44,7 +51,11 @@ export const deleteRecipe = (req, res) => {
 };
 
 export const getAllRecipes = (req, res) => {
-  Recipe.findAll({})
+  const options = {};
+  if (req.query.sort === 'upvotes' && req.query.order === 'ascending') {
+    options.order = [['upvotes', 'ASC']]
+  }
+  Recipe.findAll(options)
     .then((recipes, err) => {
       if (err) {
         res.status(400).json({ message: 'error sending your request', err });
@@ -61,28 +72,62 @@ export const voteRecipe = (req, res) => {
       recipeId: req.params.recipeId
     }
   }).then((vote, err) => {
-    if (err) {
-      res.status(400).json({ message: 'error sending your request', err });
-    } else if (vote) {
-      vote.update({ type: req.body.type })
-        .then((updatedVote) => {
-          res.status(201).json({ vote: updatedVote,
-            message: 'vote created successfully'
+    fetchRecipe(req.params.recipeId).then((recipe, err) => {
+      if (err) {
+        res.status(400).json({ message: 'error sending your request', err });
+      } else if (vote) {
+        if (vote.type === req.body.type) {
+          res.status(201).json({ vote, message: 'vote updated successfully', recipe });
+        } else {
+          vote.update({ type: req.body.type })
+            .then((updatedVote) => {
+              let fieldToIncrement;
+              let fieldToDecrement;
+              if (req.body.type === 'upvote') {
+                fieldToIncrement = 'upVotes';
+                fieldToDecrement = 'downVotes';
+              } else if (req.body.type === 'downvote') {
+                fieldToIncrement = 'downVotes';
+                fieldToDecrement = 'upVotes';
+              }
+              recipe.increment(fieldToIncrement).then(() => {
+                recipe.decrement(fieldToDecrement).then(() => {
+                  recipe.reload().then((reloadedRecipe) => {
+                    res.status(201).json({ vote: updatedVote,
+                      message: 'vote created successfully',
+                      recipe: reloadedRecipe,
+                    });
+                  }).catch(err => res.status(400).json({
+                    message: 'error sending your request', err }));
+                });
+              });
+            });
+        }
+      } else {
+        Vote.create({
+          type: req.body.type,
+          userId: req.user.id,
+          recipeId: req.params.recipeId
+        }).then((newVote) => {
+          let fieldToIncrement;
+          if (req.body.type === 'upvote') {
+            fieldToIncrement = 'upVotes';
+          } else if (req.body.type === 'downvote') {
+            fieldToIncrement = 'downVotes';
+          }
+          recipe.increment(fieldToIncrement).then(() => {
+            recipe.reload().then((fetchedRecipe) => {
+              res.status(201).json({ vote: newVote,
+                message: 'vote created successfully',
+                recipe: fetchedRecipe,
+              });
+            }).catch(err => res.status(400).json({
+              message: 'error sending your request', err }));
           });
         }).catch(err => res.status(400).json({
           message: 'error sending your request', err }));
-    } else {
-      Vote.create({
-        type: req.body.type,
-        userId: req.user.id,
-        recipeId: req.params.recipeId
-      }).then((newVote) => {
-        res.status(201).json({ vote: newVote,
-          message: 'vote created successfully'
-        });
-      }).catch(err => res.status(400).json({
-        message: 'error sending your request', err }));
-    }
+      }
+    })
   });
 };
 
