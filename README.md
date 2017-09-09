@@ -24,11 +24,11 @@ Set up Database and make migrations by running the following commands.<br>
 - `create necessary tables in the database.`
 - `sequelize db migrate to apply changes in the table.`
 
-# Hosted 
+# Hosted API
 
 https://morerecipes.herokuapp.com/
 
-# Published
+# Published Template
 
 https://llabake.github.io/more-recipes/
 
