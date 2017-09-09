@@ -1,25 +1,25 @@
 import { Recipe, Vote, FavoriteRecipe, Review } from './../../models';
 
-export const fetchRecipe = (recipeId) => {
-  return Recipe.findOne({
-    where: {
-      id: recipeId
-    }
-  }) 
-}
-export const addRecipe = (req, res) => Recipe.create({
-  title: req.body.title,
-  image: req.body.image,
-  direction: req.body.direction,
-  ingredients: req.body.ingredients,
-  userId: req.user.id
-})
-  .then(recipe => res.status(201).json({ recipe,
-    message: 'Your recipe has been added' }))
-  .catch((error) => {
-    res.status(400).json({ error });
-  });
+export const fetchRecipe = recipeId => Recipe.findOne({
+  where: {
+    id: recipeId
+  }
+});
 
+export const addRecipe = (req, res) => {
+  Recipe.create({
+    title: req.body.title,
+    image: req.body.image,
+    direction: req.body.direction,
+    ingredients: req.body.ingredients,
+    userId: req.user.id
+  })
+    .then(recipe => res.status(201).json({ recipe,
+      message: 'Your recipe has been added' }))
+    .catch((error) => {
+      res.status(400).json({ error });
+    });
+};
 
 export const modifyRecipe = (req, res) => {
   const reqBody = req.body;
@@ -51,11 +51,11 @@ export const deleteRecipe = (req, res) => {
 };
 
 export const getAllRecipes = (req, res) => {
-  const options = {};
+  const queryOptions = {};
   if (req.query.sort === 'upvotes' && req.query.order === 'ascending') {
-    options.order = [['upvotes', 'ASC']]
+    queryOptions.order = [['upvotes', 'ASC']];
   }
-  Recipe.findAll(options)
+  Recipe.findAll(queryOptions)
     .then((recipes, err) => {
       if (err) {
         res.status(400).json({ message: 'error sending your request', err });
@@ -77,7 +77,9 @@ export const voteRecipe = (req, res) => {
         res.status(400).json({ message: 'error sending your request', err });
       } else if (vote) {
         if (vote.type === req.body.type) {
-          res.status(201).json({ vote, message: 'vote updated successfully', recipe });
+          res.status(201).json({ vote,
+            message: 'vote updated successfully',
+            recipe });
         } else {
           vote.update({ type: req.body.type })
             .then((updatedVote) => {
@@ -127,7 +129,7 @@ export const voteRecipe = (req, res) => {
         }).catch(err => res.status(400).json({
           message: 'error sending your request', err }));
       }
-    })
+    });
   });
 };
 
