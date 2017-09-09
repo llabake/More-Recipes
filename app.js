@@ -4,10 +4,8 @@ import dotenv from 'dotenv';
 import logger from 'morgan';
 import routes from './server/routes';
 import db from './server/models';
-
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-  dotenv.config();  
-}
+ 
+dotenv.config();  
 
 // Set up the express app
 const app = express();

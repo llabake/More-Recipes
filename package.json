@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate  &&mocha  server/tests/**/*.js --opts ./mocha.opts",
+    "test": "set NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate  --config server/config/config.js &&mocha  server/tests/**/*.js --opts ./mocha.opts",
     "start": "./node_modules/.bin/babel-node app.js",
     "start-dev": "babel-watch app.js"
   },
