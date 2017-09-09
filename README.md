@@ -41,12 +41,12 @@ POST | [/api/v1/users/sigin](#login) | Logs a user in
 POST | [/api/v1/recipe/](#create-recipe) | Create a new recipe
 PUT | [api/v1/recipe/recipeId](#update-a-recipe) | Update a recipe details
 DELETE | [/api/v1/recipeid/recipeId](#delete-a-recipe) | Delete a recipe
-GET | [api/v1/recipe](#get all recipes) | Get all recipes
-POST | [api/v1/recipe/recipeId/votes](#vote a recipe) | Vote a recipe
-GET | [api/v1/recipes?sort=upvotes&order=ascending](#get recipe with the most upvote) | Get recipe with the most upvote
-POST | [api/v1/users/userId/recipes/recipeId](#favorite recipe) | Post a recipe as favorite
-GET | [api/v1/users/userId/recipes/recipeId](#get favorite recipes) | Get a user's favorite recipe.
-POST | [api/v1/recipe/recipeId/reviews](#post reviews) | Post review for a recipe
+GET | [api/v1/recipe](#get-all-recipes) | Get all recipes
+POST | [api/v1/recipe/recipeId/votes](#vote-a-recipe) | Vote a recipe
+GET | [api/v1/recipes?sort=upvotes&order=ascending](#get-recipe-most-upvote) | Get recipe with the most upvote
+POST | [api/v1/users/userId/recipes/recipeId](#favorite-recipe) | Post a recipe as favorite
+GET | [api/v1/users/userId/recipes/recipeId](#get-favorite-recipes) | Get a user's favorite recipe.
+POST | [api/v1/recipe/recipeId/reviews](#post-reviews) | Post review for a recipe
  
 
 # Usage
