@@ -35,6 +35,21 @@ export const modifyRecipe = (req, res) => {
   });
 };
 
+export const findARecipe = (req, res) => {
+  Recipe.findOne({
+    where: {
+      id: req.params.recipeId
+    },
+  })
+    .then((recipe, err) => {
+      if (err) {
+        res.status(400).json({ message: 'error sending your request', err });
+      } else {
+        res.status(200).json({ recipe });
+      }
+    });
+};
+
 export const deleteRecipe = (req, res) => {
   Recipe.destroy({
     where: {

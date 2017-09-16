@@ -41,6 +41,7 @@ POST | [/api/v1/users/sigin](#login) | Logs a user in
 POST | [/api/v1/recipe/](#create-recipe) | Create a new recipe
 PUT | [api/v1/recipe/recipeId](#update-a-recipe) | Update a recipe details
 DELETE | [/api/v1/recipeid/recipeId](#delete-a-recipe) | Delete a recipe
+GET | [api/v1/recipes/recipeId](#get-a-recipes) | Get a recipes
 GET | [api/v1/recipe](#get-all-recipes) | Get all recipes
 POST | [api/v1/recipe/recipeId/votes](#vote-a-recipe) | Vote a recipe
 GET | [api/v1/recipes?sort=upvotes&order=ascending](#get-recipe-most-upvote) | Get recipe with the most upvote
