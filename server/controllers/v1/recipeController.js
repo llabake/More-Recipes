@@ -24,7 +24,10 @@ export const addRecipe = (req, res) => {
 
 export const modifyRecipe = (req, res) => {
   const reqBody = req.body;
-  delete reqBody.userId;
+  const notManipulate = ['userId', 'category', 'upvotes', 'downvotes', 'views'];
+  notManipulate.forEach((element) => {
+    delete reqBody[element];
+  });
   Recipe.update(
     reqBody,
     { where: { id: req.params.recipeId },
