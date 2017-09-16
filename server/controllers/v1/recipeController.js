@@ -12,6 +12,7 @@ export const addRecipe = (req, res) => {
     image: req.body.image,
     direction: req.body.direction,
     ingredients: req.body.ingredients,
+    category: req.body.category,
     userId: req.user.id
   })
     .then(recipe => res.status(201).json({ recipe,
